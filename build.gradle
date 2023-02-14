@@ -11,6 +11,7 @@ repositories {
 
 ext {
     junitVersion = '5.8.2'
+    slf4jVersion = '2.0.6'
 }
 
 sourceCompatibility = "1.8"
@@ -23,6 +24,9 @@ tasks.withType(JavaCompile) {
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+
+    // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.4.5'
 }
 
 test {
